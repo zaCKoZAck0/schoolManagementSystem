@@ -28,7 +28,7 @@ const addStudent = async (request,response)=>{
         rollNumber: request.body.rollNumber,
         name: request.body.name,
         gender: request.body.gender,
-        email: request.body.gender,
+        email: request.body.email,
         website: request.body.website,
         imageLink: request.body.imageLink,
         address: {

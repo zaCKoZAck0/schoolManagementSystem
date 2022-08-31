@@ -35,7 +35,7 @@ function add(){
         const msg = document.getElementById('signup-success')
         msg.classList.add('success')
         setTimeout(()=>{
-            window.location = "http://localhost:3000/students"
+            window.location = "http://localhost:4000/students"
         }, 1000);     
         }
         });

@@ -8,8 +8,16 @@ const jwt = require('jsonwebtoken')
 const userJson = [{
   name: "Aarsh",
   email: "aarsh@gmail.com",
-  password: "aarsh@gmail.com"
-}]
+  password: "aarsh@gmail.com",
+  hasAccess: true
+},
+{
+  name: "Test",
+  email: "test@gmail.com",
+  password: "test@gmail.com",
+  hasAccess: false
+}
+]
 
 const userLogin = async function(request,response){
     let userExist = false;
@@ -17,20 +25,25 @@ const userLogin = async function(request,response){
     if (request.body.email === obj.email) {
         userExist = true;
         if (request.body.password === obj.password){
-            console.log("login")
-        const accessToken = jwt.sign({email: request.body.email}, 
-                process.env.ACCESS_TOKEN_SECRET);
-        response.cookie('accessToken', accessToken, {httpOnly: true});
+          if (obj.hasAccess){
+          const accessToken = jwt.sign({email: request.body.email},process.env.ACCESS_TOKEN_SECRET);
+        // response.cookie('accessToken', accessToken, {httpOnly: true});
         response.status(200).json({
             message: "Success",
             accessToken: accessToken
-        })
-        }
+        })}
         else{
-            console.log("Wrong Credentials")
-        }        
-    }
-});
+          const accessToken = '';
+          response.status(200).json({
+            message: "Success",
+            accessToken: accessToken
+        })
+        }}
+        else{
+          response.status(200).json({
+            message: "Wrong Password"
+        })        
+}}});
   if (!userExist){
     response.status(200).json({
       message : "404 User Not Found"

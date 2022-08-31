@@ -1,10 +1,10 @@
 function isLogin(){
     console.log(sessionStorage.getItem("accessToken"))
     if(sessionStorage.getItem("accessToken")){
-        window.location = "http://localhost:3000/students";
+        window.location = "http://localhost:4000/students";
     }
     else{
-        window.location = "http://localhost:3000/login"
+        window.location = "http://localhost:4000/login"
     }
 }
 
@@ -29,10 +29,21 @@ function login(){
             const msg = document.getElementById('not-exist')
             console.log(msg)
             msg.classList.add("error");
+            setTimeout(()=>{
+                msg.classList.remove("error");
+            },2000);
+        }
+        else if(data.message === 'Wrong Password'){
+            const msg = document.getElementById('wrong-password')
+            console.log(msg)
+            msg.classList.add("error");
+            setTimeout(()=>{
+                msg.classList.remove("error");
+            },2000);
         }
         else{
         sessionStorage.setItem("accessToken",data.accessToken);
-        window.location = "http://localhost:3000/students";
+        window.location = "http://localhost:4000/students";
         }
     });
     });
@@ -70,7 +81,7 @@ function signup(){
         const msg = document.getElementById('signup-success')
         msg.classList.add('success')
         setTimeout(()=>{
-            window.location = "http://localhost:3000/login"
+            window.location = "http://localhost:4000/login"
         }, 1000);        }
     });}
     });
@@ -78,5 +89,5 @@ function signup(){
 
 function logout(){
     sessionStorage.setItem("accessToken","");
-    window.location = "http://localhost:3000/students";
+    window.location = "http://localhost:4000/login";
 }

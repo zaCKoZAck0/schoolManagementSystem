@@ -6,6 +6,8 @@ function fetchStudents(){
         'authorization': `accessToken: ${sessionStorage.getItem("accessToken")}` },
         credentials: "same-origin"
     };
+
+    if (sessionStorage.getItem("accessToken")){
     fetch('http://localhost:3000/api/student/all', requestOptions)
     .then(response =>
         response.json())
@@ -30,6 +32,7 @@ function fetchStudents(){
         }).join('');
         tbody.innerHTML = tableData;
     });
+}
 };
 
 fetchStudents();
