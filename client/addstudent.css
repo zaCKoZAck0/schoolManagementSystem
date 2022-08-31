@@ -1,0 +1,76 @@
+.addflex{
+    display: flex;
+    flex-direction: row;
+}
+
+.addflex div{
+    width: 50%;
+}
+
+.add-student{
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.content-table{
+    overflow-x: hidden;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.25em;
+    width: 100%;
+    max-width: 800px;
+    min-width: 600px;
+    box-shadow: 0 0 10px 0 #fff;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.image{
+    width:50px;
+    min-width: 50px;
+}
+
+td img{
+    opacity: 80%;
+    width: 150px;
+    height: 150px;
+    transition: all;
+    transition-duration: .3s;
+}
+td img:hover{
+    opacity: 100%;
+}
+.content-table thead tr{
+    --color: hsl(var(--primary-dark-hsl),.7);
+    background-color: var(--color);
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th, .content-table td{
+    padding: 12px 15px;
+}
+
+.content-table tbody tr{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.503);
+}
+
+.content-table tbody tr:nth-of-type(even){
+    background-color: hsl(var(--primary-dark-hsl),.7);
+    color: black;
+}
+
+.content-table tbody tr:nth-of-type(odd){
+    background-color: hsl(var(--primary-dark-hsl),.3);
+
+}
+
+.content-table tbody tr:last-of-type{
+    border-bottom: 5px solid hsl(var(--primary-dark-hsl),.7);
+}
+
+
+.description{
+    display: flex;
+    flex-direction: column;
+}

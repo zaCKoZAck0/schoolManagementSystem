@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Signup</title>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="full-screen-container">
+        <div class="login-container">
+            <h1 class="login-title">Welcome</h1>
+            <form id="signup-form" class="form">
+                <div class="input-group">
+                    <label for="text">Name</label>
+                    <input required type="text" name="name" id="name">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input required type="email" name="email" id="email">
+                    <span class="msg" id="already-exists">Email already exists</span>
+                    <span class="msg" id="signup-success">SignUp Successfull</span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input required type="password" name="password" id="password">
+                    <span class="msg">Incorrect Password</span>
+                </div>
+                <div class="input-group">
+                    <label for="password2">Re-Enter Password</label>
+                    <input required type="password" name="password2" id="password2">
+                    <span class="msg">Incorrect Password</span>
+                    <span class="msg" id="diff-pass">Both Passwords are not Equal</span>
+
+                </div>
+                <button type="submit" class="login-button" onclick="signup()">
+                    Signup
+                </button>
+                <div>
+                <span>Already have an account? </span><a href="/login">Login</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

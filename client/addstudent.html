@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="addstudent.css">
+    <script defer src="addStudent.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script language="javascript">
+        if(sessionStorage.getItem("accessToken")){
+    }
+    else{
+        window.location = "http://localhost:3000/login"
+    }
+        </script>
+    <video id="background-video" autoplay loop muted>
+        <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="full-screen-container">
+        <div class="login-container signup-container">
+            <h1 class="login-title">Student Details</h1>
+            <form class="form" id="add-form">
+                <div class="input-group addflex">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input required type="text" name="name" id="name">
+                    <span class="msg" id="signup-success">Student Added Successfully</span>
+                </div>
+                <div class="input-group">
+                    <label required for="website">Website</label>
+                    <input type="text" name="website" id="website">
+                </div>
+                </div>
+                <div class="input-group addflex">
+                    <div class="input-group">
+                        <label for="rollno">Roll number</label>
+                        <input type="text" name="rollno" id="rollno">
+                    </div>
+                <div class="input-group">
+                    <label required for="gender">Gender</label>
+                    <input type="text" name="gender" id="gender">
+                </div>
+            </div>
+            <div class="input-group addflex">
+                <div class="input-group">
+                    <label for="image">Image Link</label>
+                    <input type="text" name="image" id="image">
+                </div>
+                <div class="input-group">
+                    <label required for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                </div>
+                <div class="input-group">
+                    <label required for="courses">Courses (Comma " , " seperated)</label>
+                    <input type="courses" name="courses" id="courses">
+                </div>
+                <div class="input-group">
+                    <label for="address1">Address Line 1</label>
+                    <input type="address1" name="address1" id="address1">
+                </div>
+                <div class="input-group addflex">
+                    <div class="input-group">
+                    <label for="address2">Address Line 2</label>
+                    <input type="address2" name="address2" id="address2">
+                    </div>
+                    <div class="input-group">
+                        <label for="address3">Address Line 3</label>
+                        <input type="address3" name="address3" id="address3">
+                    </div>
+                </div>
+                <div class="input-group addflex">
+                    <div class="input-group">
+                    <label for="pincode">Pincode</label>
+                    <input type="pincode" name="pincode" id="pincode">
+                    </div>
+                    <div class="input-group">
+                        <label for="city">City</label>
+                        <input type="city" name="city" id="city">
+                    </div>
+                    <div class="input-group">
+                        <label for="state">State</label>
+                        <input type="state" name="state" id="state">
+                    </div>
+                </div>
+                <button type="submit" class="login-button" onclick="add()">
+                    Add Student
+                </button>
+                <div>
+                    <span>View all students? <a href="/students">Here</a></span>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

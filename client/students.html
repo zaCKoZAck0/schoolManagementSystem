@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="addstudent.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+    <script defer src="fetchStudents.js"></script>
+    <title>Students</title>
+</head>
+<body>
+    <script language="javascript">
+        if(sessionStorage.getItem("accessToken")){
+    }
+    else{
+        window.location = "http://localhost:3000/login"
+    }
+        </script>
+    <video id="background-video" autoplay loop muted>
+    <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="full-screen-container">
+        <div>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+                <td class="add-student">Add Students? <a href="/add">Here</a></td>
+                <td><button type="submit" class="login-button" onclick="logout()">
+                    Logout
+                </button></td>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
